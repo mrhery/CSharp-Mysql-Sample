@@ -6,6 +6,8 @@ Console.WriteLine("****************************");
 Console.WriteLine("Sistem Simpan Kontak");
 Console.WriteLine("****************************");
 
+var contact = new ContactModel();
+
 string connectionString = "Server=127.0.0.1;Port=3306;Database=tiktokcsharp;Uid=root;Pwd=;";
 var mysql = new MySqlConnection(connectionString);
 
@@ -208,8 +210,15 @@ while (true)
     }
 }
 
+
+
 class ContactModel
 {
+    public ContactModel()
+    {
+        Console.WriteLine("Hai from constructor");
+    }
+
     public string nama { get; set; }
     public string fon { get; set; }
     public string email { get; set; }
